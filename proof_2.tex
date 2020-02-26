@@ -1,0 +1,73 @@
+% ----------------------------------------------------------------------
+%  Enter names etc. here
+% ----------------------------------------------------------------------
+\def\proof{2}
+\def\group{1}
+\def\namea{Shuangyi Li}\def\matnoa{10009764}
+\def\nameb{Chuhuan Shen}\def\matnob{10099999}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+% Some required or useful packages and commands (do not edit)
+% ----------------------------------------------------------------------
+\documentclass[]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amsfonts,amssymb}
+\usepackage[a4paper,margin=2.5cm,top=3.2cm,headsep=1cm]{geometry}
+\parskip1ex\parindent0ex
+\usepackage[headsepline]{scrlayer-scrpage}\setkomafont{pagehead}{\normalfont\sffamily\small}
+\ihead{\textbf{Institute of Automatic Control\\Leibniz University Hannover}\\Prof. Dr.-Ing. Matthias Müller}
+\ohead{\textbf{Lecture Nonlinear Control\\Student Proofs WS 2019/2020}\\Proof \proof, Group \group{} (\namea, \nameb)}
+\cfoot{\pagemark}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\renewcommand{\labelenumii}{\alph{enumi}\arabic{enumii})}
+\renewcommand{\theenumi}{question \alph{enumi})}
+\let\tempone\enumerate\let\temptwo\endenumerate
+\renewenvironment{enumerate}{\tempone\addtolength{\itemsep}{0.5\baselineskip}}{\temptwo}
+\newcounter{aufgcount}\renewcommand{\theaufgcount}{\proof.\arabic{aufgcount}}
+\newcommand{\problem}[1]{\refstepcounter{aufgcount}\par
+  \ifnum\value{aufgcount}=1\vspace{1.25ex}\else\vspace{0.5ex}\fi
+  \begin{description}\item[Problem \theaufgcount] #1\end{description}}
+% ----------------------------------------------------------------------
+
+\begin{document}
+
+% ----------------------------------------------------------------------
+\section*{Student Proof \proof}\vspace{-2ex}
+Solution by group \group: \namea, \matnoa{} and \nameb, \matnob
+\bigskip
+% ----------------------------------------------------------------------
+% ----------------------------------------------------------------------
+%  Your solution here
+% ----------------------------------------------------------------------
+\problem{~\par
+  \(\Dot{V}(x)=\frac{\partial{V}}{\partial{x}}f(x)-k\frac{\partial{V}}{\partial{x}}G(x)R^{-1}(x)G^T(x)(\frac{\partial{V}}{\partial{x}})^T\)~\par
+  Substitute for \(\frac{\partial{V}}{\partial{x}}f(x)\) using Hamilton-Jacobi-Bellman equation.~\par
+  \(\Dot{V}(x)=-q(x)-(k-\frac{1}{4})\frac{\partial{v}}{\partial{x}}G(x)R^{-1}(x)G^T(x)(\frac{\partial{V}}{\partial{x}})^T\)~\par
+  \begin{enumerate}
+  \item {if \(q(x)\)is positive definite and \(k\ge1/4\), we conclude that \(\Dot{V}(x)\)is negative definite; hence, the origin is asymptotically stable.
+  }
+
+  \item{if \(q(x)\)is only negative semidefinite and \(k>1/4\), we can only conclude that \(\Dot{V}(x)\)is negative semidefinite. But
+  }
+
+  \end{enumerate}
+}
+
+\problem{
+
+A problem without subtasks
+
+}
+
+\problem{~\par
+
+  A problem without subtasks beginning in a new line
+
+}
+
+% ----------------------------------------------------------------------
+
+\end{document}
+
